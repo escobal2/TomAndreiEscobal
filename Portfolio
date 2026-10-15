@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tom Andrei Escobal | WordPress Developer & Full-Stack Web Developer</title>
+  <meta name="description" content="Tom Andrei Escobal is a WordPress developer and full-stack web developer (Laravel, React, MySQL) specializing in custom CMS builds, technical SEO, and fast, scalable websites." />
+  <meta property="og:title" content="Tom Andrei Escobal | WordPress Developer" />
+  <meta property="og:description" content="Custom WordPress builds, technical SEO, and full-stack web apps with Laravel and React." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 60px 0 40px; }
+    header { margin-bottom: 40px; }
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+    .role { font-size: 1.2rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    header p.intro { font-size: 1.1rem; color: var(--text-muted); max-width: 680px; }
+    .cta-row { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #0f172a; }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-secondary { border: 1px solid var(--border); color: var(--text-main); }
+    .btn-secondary:hover { border-color: var(--accent); }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 44px 0 20px 0;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .about p { color: var(--text-muted); max-width: 760px; margin-bottom: 12px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .card-title { font-size: 1.25rem; font-weight: 700; }
+    .card-link { color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+    .card-link:hover { text-decoration: underline; }
+    .card-label { color: var(--text-muted); font-size: 0.85rem; }
+    .card-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 14px; }
+    .card ul { margin: 0 0 16px 18px; color: var(--text-muted); font-size: 0.93rem; }
+    .card ul li { margin-bottom: 4px; }
+    .service-title { font-weight: 700; margin-bottom: 6px; font-size: 1.02rem; }
+    .service-desc { color: var(--text-muted); font-size: 0.92rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      border: 1px solid var(--border);
+    }
+    .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-pill {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .contact-box { text-align: center; padding: 36px 24px; }
+    .contact-box p { color: var(--text-muted); margin-bottom: 18px; }
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .container { padding-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="badge">Open to remote WordPress &amp; web development roles</span>
+      <h1>Tom Andrei Escobal</h1>
+      <div class="role">WordPress Developer &amp; Full-Stack Web Developer</div>
+      <p class="intro">I build and optimize custom WordPress sites and CMS platforms, and I build full-stack web applications with Laravel, React, and MySQL when a project needs more than a plugin.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="Tom_Andrei_Escobal_Resume.pdf" download>Download Resume (PDF)</a>
+        <a class="btn btn-secondary" href="mailto:tomescobal.tlc@gmail.com">Email Me</a>
+      </div>
+    </header>
+
+    <section class="about">
+      <h2>About</h2>
+      <p>I'm a BS Information Technology graduate (The Lewis College, 2025) based in Sorsogon City, Philippines, working remotely as a web developer and CMS specialist. Day to day, I customize WordPress themes, work with custom post types and taxonomies, handle technical SEO, and keep sites fast and responsive.</p>
+      <p>Because I also write Laravel and React, I'm comfortable going past page builders and plugins when a project needs custom functionality.</p>
+    </section>
+
+    <section>
+      <h2>What I Do</h2>
+      <div class="services">
+        <div class="card">
+          <div class="service-title">Custom WordPress Development</div>
+          <div class="service-desc">Theme and plugin customization, custom post types and taxonomies, hooks, and REST API integrations.</div>
+        </div>
+        <div class="card">
+          <div class="service-title">Speed &amp; Technical SEO</div>
+          <div class="service-desc">Page-speed optimization, site structure, metadata, and on-page SEO to support organic rankings.</div>
+        </div>
+        <div class="card">
+          <div class="service-title">Maintenance &amp; Fixes</div>
+          <div class="service-desc">Uptime and performance monitoring, cross-browser and mobile fixes, and layout and styling cleanups.</div>
+        </div>
+        <div class="card">
+          <div class="service-title">Full-Stack Web Apps</div>
+          <div class="service-desc">Laravel 11 backends, React.js interfaces, and normalized MySQL databases deployed to production.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured Work</h2>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-title">Custom CMS &amp; Real Estate Platform</div>
+            <span class="card-label">WordPress · Client Work</span>
+          </div>
+          <p class="card-desc">Managed, optimized, and extended multi-property CMS platforms built on WordPress.</p>
+          <ul>
+            <li>Custom taxonomy models to organize and filter property listings</li>
+            <li>Property listing integrations</li>
+            <li>Speed optimizations and a technical SEO framework</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">Custom Post Types / Taxonomies</span>
+            <span class="tag">Technical SEO</span>
+            <span class="tag">Performance</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-title">Operations Management Web Platform</div>
+            <span class="card-label">Private Production Application</span>
+          </div>
+          <p class="card-desc">A private, live full-stack web application for operations tracking, record workflows, and data management.</p>
+          <ul>
+            <li>Dynamic UI with form validation and real-time updates</li>
+            <li>Normalized MySQL schema for fast queries</li>
+            <li>Custom domain, SSL, and production server setup</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Full-Stack</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Database Design</span>
+            <span class="tag">Production Deployment</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-title">Public Transit Incident &amp; Complaint System</div>
+            <span class="card-label">Case Study</span>
+          </div>
+          <p class="card-desc">A management app where commuters submit complaints and track their resolution status.</p>
+          <ul>
+            <li>Laravel 11 REST API for intake, authentication, and status lifecycles</li>
+            <li>React.js admin and user tracking dashboards</li>
+            <li>MySQL tables built for historical and transactional records</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Laravel 11</span>
+            <span class="tag">React.js</span>
+            <span class="tag">REST API</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-pill">WordPress Custom Architecture</div>
+        <div class="skill-pill">Custom Post Types &amp; Hooks</div>
+        <div class="skill-pill">PHP &amp; Laravel 11</div>
+        <div class="skill-pill">React.js &amp; JavaScript (ES6+)</div>
+        <div class="skill-pill">MySQL &amp; Database Design</div>
+        <div class="skill-pill">RESTful API Design</div>
+        <div class="skill-pill">HTML5, CSS3 &amp; Tailwind</div>
+        <div class="skill-pill">Technical SEO &amp; Page Speed</div>
+        <div class="skill-pill">Git / GitHub</div>
+        <div class="skill-pill">cPanel &amp; DNS Setup</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card contact-box">
+        <p>Looking for a WordPress developer? Let's talk.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn btn-primary" href="mailto:tomescobal.tlc@gmail.com">tomescobal.tlc@gmail.com</a>
+          <a class="btn btn-secondary" href="Tom_Andrei_Escobal_Resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Tom Andrei Escobal · Sorsogon City, Philippines
+    </footer>
+  </div>
+
+</body>
+</html>
