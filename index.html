@@ -1,268 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /> 
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tom Andrei Escobal | WordPress Developer & Full-Stack Web Developer</title>
-  <meta name="description" content="Tom Andrei Escobal is a WordPress developer and full-stack web developer (Laravel, React, MySQL) specializing in custom CMS builds, technical SEO, and fast, scalable websites." />
-  <meta property="og:title" content="Tom Andrei Escobal | WordPress Developer" />
-  <meta property="og:description" content="Custom WordPress builds, technical SEO, and full-stack web apps with Laravel and React." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+  <title>Tom Andrei Escobal | Full-Stack Web Developer & IT Website Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --accent: #38bdf8;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border: #334155;
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-hover: #1e293b;
+      --border: #1f2937;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.14);
+      --emerald: #10b981;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding: 0 20px;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 60px 0 40px; }
-    header { margin-bottom: 40px; }
-    .badge {
-      display: inline-block;
-      background: rgba(56, 189, 248, 0.1);
-      color: var(--accent);
-      padding: 4px 12px;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-    }
-    h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
-    .role { font-size: 1.2rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
-    header p.intro { font-size: 1.1rem; color: var(--text-muted); max-width: 680px; }
-    .cta-row { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: transform 0.2s, background 0.2s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--accent); color: #0f172a; }
-    .btn-primary:hover { background: #7dd3fc; }
-    .btn-secondary { border: 1px solid var(--border); color: var(--text-main); }
-    .btn-secondary:hover { border-color: var(--accent); }
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 44px 0 20px 0;
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navbar */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
     }
-    .about p { color: var(--text-muted); max-width: 760px; margin-bottom: 12px; }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .nav {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 70px;
+    }
+    .logo { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; align-items: center; font-size: 0.92rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px; border-radius: 8px; font-weight: 600; font-size: 0.92rem;
+      transition: all 0.2s ease;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+    .btn-outline { border: 1px solid #334155; background: var(--surface); color: var(--text); }
+    .btn-outline:hover { border-color: var(--accent); background: var(--surface-hover); }
+
+    /* Hero */
+    .hero { padding: 84px 0 64px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12); color: #34d399;
+      font-size: 0.82rem; font-weight: 600; margin-bottom: 20px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); }
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 800; line-height: 1.15; letter-spacing: -0.03em;
+      max-width: 850px; margin-bottom: 18px;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, #60a5fa, #34d399);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.1rem; color: var(--muted); max-width: 720px; margin-bottom: 30px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px; }
+
+    /* Metrics Bar */
+    .metrics {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px; padding-top: 32px; border-top: 1px solid var(--border);
+    }
+    .metric-card {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 18px 20px; border-radius: 12px;
+    }
+    .metric-card strong { display: block; font-size: 1.05rem; color: var(--text); margin-bottom: 4px; }
+    .metric-card span { font-size: 0.85rem; color: var(--muted); }
+
+    /* Section Defaults */
+    section { padding: 64px 0; border-top: 1px solid var(--border); }
+    .section-tag { color: var(--accent); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    .section-title { font-size: 1.85rem; font-weight: 800; margin: 6px 0 12px; letter-spacing: -0.02em; }
+    .section-sub { color: var(--muted); max-width: 650px; margin-bottom: 36px; font-size: 0.98rem; }
+
+    /* 4 Pillars Grid */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: transform 0.2s, border-color 0.2s;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 26px; transition: border-color 0.2s ease;
     }
-    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
+    .card:hover { border-color: #3b82f6; }
+    .card-num {
+      display: inline-block; font-size: 0.78rem; font-weight: 700;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 4px 10px; border-radius: 6px; margin-bottom: 14px;
     }
-    .card-title { font-size: 1.25rem; font-weight: 700; }
-    .card-link { color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
-    .card-link:hover { text-decoration: underline; }
-    .card-label { color: var(--text-muted); font-size: 0.85rem; }
-    .card-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 14px; }
-    .card ul { margin: 0 0 16px 18px; color: var(--text-muted); font-size: 0.93rem; }
-    .card ul li { margin-bottom: 4px; }
-    .service-title { font-weight: 700; margin-bottom: 6px; font-size: 1.02rem; }
-    .service-desc { color: var(--text-muted); font-size: 0.92rem; }
+    .card h3 { font-size: 1.18rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 0.93rem; margin-bottom: 16px; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag {
-      background: #0f172a;
-      color: #cbd5e1;
-      padding: 3px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      border: 1px solid var(--border);
+      font-size: 0.78rem; font-weight: 500; color: #cbd5e1;
+      background: #1e293b; padding: 4px 10px; border-radius: 6px;
     }
-    .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skill-pill {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.9rem;
+
+    /* Projects */
+    .project-list { display: flex; flex-direction: column; gap: 22px; }
+    .project {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px;
     }
-    .contact-box { text-align: center; padding: 36px 24px; }
-    .contact-box p { color: var(--text-muted); margin-bottom: 18px; }
+    .project-top {
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: baseline; gap: 10px; margin-bottom: 10px;
+    }
+    .project-role { font-size: 0.84rem; font-weight: 600; color: var(--accent); }
+    .project h3 { font-size: 1.28rem; margin-bottom: 8px; }
+    .project p { color: var(--muted); font-size: 0.95rem; margin-bottom: 14px; }
+    .project ul { list-style: disc; padding-left: 20px; color: #cbd5e1; font-size: 0.92rem; margin-bottom: 18px; }
+    .project ul li { margin-bottom: 6px; }
+
+    /* Footer */
     footer {
-      margin-top: 50px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--border);
-      padding-top: 24px;
+      padding: 56px 0; border-top: 1px solid var(--border);
+      text-align: center; color: var(--muted); font-size: 0.9rem;
     }
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      .container { padding-top: 40px; }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 52px 0 40px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <span class="badge">Open to remote WordPress &amp; web development roles</span>
-      <h1>Tom Andrei Escobal</h1>
-      <div class="role">WordPress Developer &amp; Full-Stack Web Developer</div>
-      <p class="intro">I build and optimize custom WordPress sites and CMS platforms, and I build full-stack web applications with Laravel, React, and MySQL when a project needs more than a plugin.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="Tom_Andrei_Escobal_Resume.pdf" download>Download Resume (PDF)</a>
-        <a class="btn btn-secondary" href="mailto:tomescobal.tlc@gmail.com">Email Me</a>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Tom Andrei <span>Escobal</span></a>
+      <nav class="nav-links">
+        <a href="#pillars">Capabilities</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="./Tom_Andrei_Escobal_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Available Full-Time Remote (EST / US &amp; Global Schedules)
       </div>
-    </header>
+      <h1>
+        Full-Stack Web Developer &amp; <span>Website / IT Systems Specialist</span>
+      </h1>
+      <p>
+        I build and optimize full-stack web applications (<strong>Laravel 11, React.js, Python, MySQL</strong>), engineer high-converting <strong>WordPress &amp; Technical SEO</strong> platforms, and maintain reliable <strong>IT operations, KPI dashboards, and API automations</strong>.
+      </p>
+      <div class="hero-actions">
+        <a href="./Tom_Andrei_Escobal_Resume.pdf" class="btn btn-primary" download>Download Resume (PDF)</a>
+        <a href="mailto:tomescobal.tlc@gmail.com" class="btn btn-outline">Email: tomescobal.tlc@gmail.com</a>
+      </div>
 
-    <section class="about">
-      <h2>About</h2>
-      <p>I'm a BS Information Technology graduate (The Lewis College, 2025) based in Sorsogon City, Philippines, working remotely as a web developer and CMS specialist. Day to day, I customize WordPress themes, work with custom post types and taxonomies, handle technical SEO, and keep sites fast and responsive.</p>
-      <p>Because I also write Laravel and React, I'm comfortable going past page builders and plugins when a project needs custom functionality.</p>
-    </section>
-
-    <section>
-      <h2>What I Do</h2>
-      <div class="services">
-        <div class="card">
-          <div class="service-title">Custom WordPress Development</div>
-          <div class="service-desc">Theme and plugin customization, custom post types and taxonomies, hooks, and REST API integrations.</div>
+      <div class="metrics">
+        <div class="metric-card">
+          <strong>Full-Stack Engineering</strong>
+          <span>Laravel 11, React.js, PHP, Python &amp; Normalized MySQL</span>
         </div>
-        <div class="card">
-          <div class="service-title">Speed &amp; Technical SEO</div>
-          <div class="service-desc">Page-speed optimization, site structure, metadata, and on-page SEO to support organic rankings.</div>
+        <div class="metric-card">
+          <strong>Website &amp; Technical SEO</strong>
+          <span>WordPress Architecture, Elementor, Core Web Vitals &amp; Schema</span>
         </div>
-        <div class="card">
-          <div class="service-title">Maintenance &amp; Fixes</div>
-          <div class="service-desc">Uptime and performance monitoring, cross-browser and mobile fixes, and layout and styling cleanups.</div>
+        <div class="metric-card">
+          <strong>Data &amp; Automation</strong>
+          <span>Operational Dashboards, REST APIs, Zapier &amp; Data Integrity</span>
         </div>
-        <div class="card">
-          <div class="service-title">Full-Stack Web Apps</div>
-          <div class="service-desc">Laravel 11 backends, React.js interfaces, and normalized MySQL databases deployed to production.</div>
+        <div class="metric-card">
+          <strong>IT &amp; Security Ops</strong>
+          <span>cPanel, DNS, SSL, 2FA/Access Controls &amp; System Support</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <h2>Featured Work</h2>
-      <div class="grid">
+    <!-- 4 Core Pillars -->
+    <section id="pillars">
+      <div class="section-tag">What I Do</div>
+      <h2 class="section-title">Beyond Page Builders: Full-Stack, SEO &amp; IT Operations</h2>
+      <p class="section-sub">
+        I bridge the gap between creative web design, full-stack software engineering, and day-to-day IT systems reliability.
+      </p>
 
+      <div class="grid-2">
         <div class="card">
-          <div class="card-top">
-            <div class="card-title">Custom CMS &amp; Real Estate Platform</div>
-            <span class="card-label">WordPress · Client Work</span>
-          </div>
-          <p class="card-desc">Managed, optimized, and extended multi-property CMS platforms built on WordPress.</p>
-          <ul>
-            <li>Custom taxonomy models to organize and filter property listings</li>
-            <li>Property listing integrations</li>
-            <li>Speed optimizations and a technical SEO framework</li>
-          </ul>
+          <span class="card-num">01 / FULL-STACK APPLICATIONS</span>
+          <h3>Laravel, React &amp; Database Engineering</h3>
+          <p>Architecting custom web apps, role-based portals, and normalized MySQL databases when business operations outgrow off-the-shelf plugins.</p>
           <div class="tags">
-            <span class="tag">WordPress</span>
-            <span class="tag">Custom Post Types / Taxonomies</span>
-            <span class="tag">Technical SEO</span>
-            <span class="tag">Performance</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <div class="card-title">Operations Management Web Platform</div>
-            <span class="card-label">Private Production Application</span>
-          </div>
-          <p class="card-desc">A private, live full-stack web application for operations tracking, record workflows, and data management.</p>
-          <ul>
-            <li>Dynamic UI with form validation and real-time updates</li>
-            <li>Normalized MySQL schema for fast queries</li>
-            <li>Custom domain, SSL, and production server setup</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Full-Stack</span>
+            <span class="tag">Laravel 11</span>
+            <span class="tag">React.js</span>
+            <span class="tag">PHP &amp; Python</span>
             <span class="tag">MySQL</span>
-            <span class="tag">Database Design</span>
-            <span class="tag">Production Deployment</span>
+            <span class="tag">REST APIs</span>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-top">
-            <div class="card-title">Public Transit Incident &amp; Complaint System</div>
-            <span class="card-label">Case Study</span>
+          <span class="card-num">02 / WEBSITE &amp; TECHNICAL SEO</span>
+          <h3>WordPress Architecture &amp; Speed Audits</h3>
+          <p>Custom theme/plugin development, Custom Post Types (CPTs), Elementor optimization, Core Web Vitals tuning, metadata, and JSON-LD schema markup.</p>
+          <div class="tags">
+            <span class="tag">WordPress CMS</span>
+            <span class="tag">Elementor</span>
+            <span class="tag">Custom Post Types</span>
+            <span class="tag">Technical SEO</span>
+            <span class="tag">Page Speed</span>
           </div>
-          <p class="card-desc">A management app where commuters submit complaints and track their resolution status.</p>
+        </div>
+
+        <div class="card">
+          <span class="card-num">03 / ANALYTICS &amp; AUTOMATION</span>
+          <h3>Dashboards, APIs &amp; Data Integrity</h3>
+          <p>Building KPI reporting dashboards, automating cross-platform workflows, and eliminating data discrepancies across CRM and project tools.</p>
+          <div class="tags">
+            <span class="tag">Data Dashboards</span>
+            <span class="tag">API Integrations</span>
+            <span class="tag">Zapier / Webhooks</span>
+            <span class="tag">HubSpot &amp; Airtable</span>
+            <span class="tag">Jotform &amp; Asana</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">04 / IT &amp; CYBERSECURITY</span>
+          <h3>Infrastructure, Security &amp; Team Support</h3>
+          <p>Managing production servers, SSL/DNS routing, access controls (2FA/firewalls), SOP documentation, and cross-team technical troubleshooting.</p>
+          <div class="tags">
+            <span class="tag">cPanel &amp; DNS</span>
+            <span class="tag">SSL &amp; Security</span>
+            <span class="tag">IT Troubleshooting</span>
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">Google Workspace</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects">
+      <div class="section-tag">Featured Work</div>
+      <h2 class="section-title">Production Systems &amp; Platforms</h2>
+      <p class="section-sub">Real-world platforms built for operational data tracking, incident management, and search performance.</p>
+
+      <div class="project-list">
+        <div class="project">
+          <div class="project-top">
+            <span class="project-role">Lead Full-Stack Developer · Private Production Application</span>
+            <span class="tag">2026</span>
+          </div>
+          <h3>Operations Management &amp; Analytics Web Platform</h3>
+          <p>A live full-stack web platform engineered for internal operations tracking, automated record workflows, and cross-team data integrity.</p>
           <ul>
-            <li>Laravel 11 REST API for intake, authentication, and status lifecycles</li>
-            <li>React.js admin and user tracking dashboards</li>
-            <li>MySQL tables built for historical and transactional records</li>
+            <li>Built dynamic UI workflows with strict form validation, client-side state handling, and real-time operational updates.</li>
+            <li>Designed normalized MySQL database schemas optimized for fast reporting queries and zero data discrepancies.</li>
+            <li>Configured production server hosting, custom domain routing, SSL encryption, and role-based access security.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Full-Stack PHP</span>
+            <span class="tag">MySQL Schema Design</span>
+            <span class="tag">KPI Dashboards</span>
+            <span class="tag">Production Security</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <span class="project-role">Full-Stack Developer · Case Study</span>
+            <span class="tag">2024 – 2025</span>
+          </div>
+          <h3>Public Transit Incident &amp; Complaint Management System</h3>
+          <p>An end-to-end ticketing and analytics web app enabling commuters and administrators to submit, track, and resolve incidents in real time.</p>
+          <ul>
+            <li>Developed Laravel 11 REST API endpoints for automated complaint intake, authentication, and status lifecycles.</li>
+            <li>Created responsive React.js admin and user tracking dashboards to monitor resolution metrics.</li>
+            <li>Structured relational MySQL tables for historical reporting, audit logs, and transactional integrity.</li>
           </ul>
           <div class="tags">
             <span class="tag">Laravel 11</span>
             <span class="tag">React.js</span>
             <span class="tag">REST API</span>
             <span class="tag">MySQL</span>
+            <span class="tag">Tailwind CSS</span>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <section>
-      <h2>Technical Skills</h2>
-      <div class="skills-container">
-        <div class="skill-pill">WordPress Custom Architecture</div>
-        <div class="skill-pill">Custom Post Types &amp; Hooks</div>
-        <div class="skill-pill">PHP &amp; Laravel 11</div>
-        <div class="skill-pill">React.js &amp; JavaScript (ES6+)</div>
-        <div class="skill-pill">MySQL &amp; Database Design</div>
-        <div class="skill-pill">RESTful API Design</div>
-        <div class="skill-pill">HTML5, CSS3 &amp; Tailwind</div>
-        <div class="skill-pill">Technical SEO &amp; Page Speed</div>
-        <div class="skill-pill">Git / GitHub</div>
-        <div class="skill-pill">cPanel &amp; DNS Setup</div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card contact-box">
-        <p>Looking for a WordPress developer? Let's talk.</p>
-        <div class="cta-row" style="justify-content:center;">
-          <a class="btn btn-primary" href="mailto:tomescobal.tlc@gmail.com">tomescobal.tlc@gmail.com</a>
-          <a class="btn btn-secondary" href="Tom_Andrei_Escobal_Resume.pdf" download>Download Resume</a>
+        <div class="project">
+          <div class="project-top">
+            <span class="project-role">WordPress Architecture &amp; Technical SEO Lead · Client Work</span>
+            <span class="tag">2025 – Present</span>
+          </div>
+          <h3>Multi-Property Real Estate CMS &amp; Technical SEO Framework</h3>
+          <p>Managed, extended, and optimized multi-property CMS platforms built on custom WordPress architecture.</p>
+          <ul>
+            <li>Engineered Custom Post Types (CPTs) and custom taxonomy models to organize and filter property listings dynamically.</li>
+            <li>Executed technical SEO audits (Core Web Vitals, metadata, schema markup, broken link resolution) to boost organic visibility.</li>
+            <li>Integrated property listing APIs and maintained cross-browser/mobile responsiveness.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">WordPress Custom Architecture</span>
+            <span class="tag">Custom Post Types</span>
+            <span class="tag">Technical SEO</span>
+            <span class="tag">Core Web Vitals</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      © 2026 Tom Andrei Escobal · Sorsogon City, Philippines
-    </footer>
-  </div>
+    <!-- Experience & Education -->
+    <section id="experience">
+      <div class="section-tag">Background</div>
+      <h2 class="section-title">Experience &amp; Education</h2>
+      <div class="grid-2" style="margin-top: 24px;">
+        <div class="card">
+          <span class="card-num">SEPT 2025 – PRESENT · REMOTE</span>
+          <h3>Web Developer, Technical SEO &amp; Website Systems Specialist</h3>
+          <p>Managing and optimizing production websites, conducting technical SEO audits, building custom WordPress/Elementor architectures, and maintaining server/API reliability.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">MAR 2022 – MAR 2025</span>
+          <h3>IT Systems Programmer &amp; Operations Data Officer</h3>
+          <p>Developed internal database-driven tools, ran automated reliability tests, and streamlined digital records workflows and data integrity processes.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">GRADUATED JUNE 2025</span>
+          <h3>BS in Information Technology</h3>
+          <p>The Lewis College — Sorsogon City, Philippines. Focused on full-stack web engineering, relational databases, and information systems.</p>
+        </div>
+        <div class="card" id="contact">
+          <span class="card-num">DIRECT CONTACT</span>
+          <h3>Ready to Join Your Engineering &amp; Web Team</h3>
+          <p>Equipped with a dual-monitor workstation, high-speed connection, and full-time availability for EST or global schedules.</p>
+          <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="mailto:tomescobal.tlc@gmail.com" class="btn btn-primary">tomescobal.tlc@gmail.com</a>
+            <a href="./Tom_Andrei_Escobal_Resume.pdf" class="btn btn-outline" download>Resume PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Tom Andrei Escobal · Sorsogon City, Philippines · (+63) 970 600 3378
+    </div>
+  </footer>
 
 </body>
 </html>
